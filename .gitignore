@@ -1,0 +1,45 @@
+# OSX
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+
+# SVN
+.svn/
+
+# Node.js
+node_modules/
+
+# Sublime Text
+*.sublime-*
+
+# Vim
+*~
+*.un~
+*.swp
+*.swo
+*.swn
+*.swl
+*.swm
+.sw*
+Session.vim
+.netrwhist
+
+# IntelliJ IDEA
+.idea
+
+# Current Project
+*.iml
+*.log
+*.log.2017*
+npm-debug.log*
+.classpath
+.project
+.settings/
+bin/
+deploy/
+target/
+logs/
+dist/
+

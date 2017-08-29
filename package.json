@@ -1,0 +1,29 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "description": "wedding invitation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node_modules/.bin/webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsj1107/wedding.git"
+  },
+  "author": "tsjxyz@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsj1107/wedding/issues"
+  },
+  "homepage": "https://github.com/tsj1107/wedding#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1",
+    "copy-webpack-plugin": "^4.0.1"
+  },
+  "dependencies": {
+    "two.js": "^0.6.0",
+    "underscore": "^1.8.3"
+  }
+}
