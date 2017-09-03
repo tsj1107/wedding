@@ -6,7 +6,7 @@ const two = new Two({
   fullscreen: true
 }).appendTo(document.body)
 
-fetch('/vendor/img/xiyan.svg')
+fetch('/vendor/img/logo.svg')
   .then((response) => {
     return response.text()
   }).then((svg) => {
@@ -29,7 +29,7 @@ fetch('/vendor/img/xiyan.svg')
     logo.distances = calculateDistances(logo)
     logo.total = 0
     logo.stroke = 'white'
-    logo.linewidth = 5
+    logo.linewidth = 3
     _.each(logo.distances, function(d) {
       logo.total += d
     })
@@ -42,7 +42,7 @@ fetch('/vendor/img/xiyan.svg')
         if (t < 0.9999) {
           t += 0.00625
         } else {
-          startOver()
+          // startOver()
         }
 
         setEnding(logo, t)
