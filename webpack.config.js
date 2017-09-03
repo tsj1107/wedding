@@ -9,6 +9,20 @@ var webpackConfig = {
     path: __dirname + '/dist',
     filename: '[name].js'
   },
+  module: {
+    rules: [
+      {
+        test: /\.less$/,
+        use: [{
+            loader: "style-loader"
+        }, {
+            loader: "css-loader"
+        }, {
+            loader: "less-loader"
+        }]
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.htm',
