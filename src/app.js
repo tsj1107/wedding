@@ -29,7 +29,7 @@ fetch('/vendor/img/logo.svg')
     logo.distances = calculateDistances(logo)
     logo.total = 0
     logo.stroke = 'white'
-    logo.linewidth = 3
+    logo.linewidth = 2
     _.each(logo.distances, function(d) {
       logo.total += d
     })
