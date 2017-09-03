@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "two.js": "^0.6.0",
-    "underscore": "^1.8.3"
+    "whatwg-fetch": "^2.0.3"
   }
 }
