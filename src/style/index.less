@@ -4,5 +4,144 @@
 }
 
 body {
-  background-color: #000000;
+  background-color: #eceade;
+}
+
+#svg {
+  margin: 10px;
+  position:absolute;
+  left:10px;
+  top:10px;
+}
+
+
+.neon-line{
+  stroke-linecap:round;
+  fill:none;
+  stroke-width:7px;
+  stroke-miterlimit:10;
+}
+
+.pink {
+  stroke:#FF69B4;
+}
+
+.animated-stroke {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  -webkit-animation: dash .66s linear forwards;
+  -moz-animation:dash .66s linear forwards;
+  -o-animation:dash .66s linear forwards;
+  animation: dash .66s linear forwards;
+}
+
+.neon-wash{
+  -webkit-animation: washout 3s ease-in-out 4.25s 12;
+  -moz-animation: washout 3s ease-in-out 4.25s 12;
+  -o-animation: washout 3s ease-in-out 4.25s 12;
+  animation: washout 3s ease-in-out 4.25s 12;
+  stroke-linecap:round;
+  stroke-width:5px;
+  stroke-miterlimit:10;
+  opacity:0;
+  fill:none;
+
+}
+.neon-glow{
+  -webkit-animation: lightup 3s ease-in-out 4s 12;
+  -moz-animation: lightup 3s ease-in-out 4s 12;
+  -o-animation: lightup 3s ease-in-out 4s 12;
+  animation: lightup 3s ease-in-out 4s 12;
+  stroke-linecap:round;
+  fill:none;
+  stroke-width:15px;
+  stroke-miterlimit:10;
+  opacity:0;
+}
+
+
+
+.glow1 {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+   filter: url(#blur1);
+
+  }
+
+.glow2 {
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: url(#blur2);
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+ }
+@-webkit-keyframes dash {
+  to {
+    -webkit-stroke-dashoffset: 0;
+  }
+ }
+
+@keyframes lightup {
+    from {
+        opacity:0s;
+    }
+
+    50% {
+        opacity:1;
+    }
+
+    to {
+        opacity:0;
+    }
+}
+
+@-webkit-keyframes lightup {
+    from {
+        -webkit-opacity:0s;
+    }
+
+    50% {
+        -webkit-opacity:1;
+    }
+
+    to {
+        -webkit-opacity:0;
+    }
+}
+
+@keyframes washout {
+      from {
+        opacity:.33s;
+    }
+
+    50% {
+        opacity:1;
+    }
+
+    to {
+        opacity:.33;
+    }
+}
+
+
+@-webkit-keyframes washout {
+      from {
+        -webkit-opacity:.33s;
+    }
+
+    50% {
+        -webkit-opacity:1;
+    }
+
+    to {
+        -webkit-opacity:.33;
+    }
 }

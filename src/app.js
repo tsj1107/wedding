@@ -28,7 +28,7 @@ fetch('/vendor/img/logo.svg')
     logo.center().translation.set(two.width / 2, two.height / 2)
     logo.distances = calculateDistances(logo)
     logo.total = 0
-    logo.stroke = 'white'
+    logo.stroke = '#f42843'
     logo.linewidth = 2
     _.each(logo.distances, function(d) {
       logo.total += d
