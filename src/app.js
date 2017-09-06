@@ -2,9 +2,14 @@ import './style/index.less'
 import 'whatwg-fetch'
 import Parallax from 'parallax-js'
 
+const scene = document.getElementById('bg')
+const parallax = new Parallax(scene)
+
+// LOGO Animation
 const two = new Two({
   type: Two.Types.svg,
-  fullscreen: true
+  width: 332,
+  height: 959
 }).appendTo(document.body)
 
 fetch('/vendor/img/logo.svg')
@@ -38,7 +43,7 @@ fetch('/vendor/img/logo.svg')
     clearT()
 
     two
-      .appendTo(document.getElementById('main'))
+      .appendTo(document.getElementById('logo'))
       .bind('update', function() {
         if (t < 0.9999) {
           t += 0.00625
