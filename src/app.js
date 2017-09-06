@@ -1,5 +1,6 @@
 import './style/index.less'
 import 'whatwg-fetch'
+import Parallax from 'parallax-js'
 
 const two = new Two({
   type: Two.Types.svg,

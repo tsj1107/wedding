@@ -27,6 +27,7 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "parallax-js": "https://github.com/wagerfield/parallax",
     "two.js": "^0.6.0",
     "whatwg-fetch": "^2.0.3"
   }
