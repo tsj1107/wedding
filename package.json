@@ -4,7 +4,7 @@
   "description": "wedding invitation",
   "main": "index.js",
   "scripts": {
-    "dev": "node_modules/.bin/webpack-dev-server --content-base ./dist"
+    "dev": "node_modules/.bin/webpack-dev-server --content-base ./dist --hot"
   },
   "repository": {
     "type": "git",
