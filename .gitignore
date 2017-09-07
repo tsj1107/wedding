@@ -41,5 +41,4 @@ bin/
 deploy/
 target/
 logs/
-dist/
 

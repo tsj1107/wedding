@@ -2,6 +2,9 @@ import './style/index.less'
 import 'whatwg-fetch'
 import Parallax from 'parallax-js'
 
+
+
+// Background Animation
 const scene = document.getElementById('bg')
 const parallax = new Parallax(scene)
 
