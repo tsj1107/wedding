@@ -1,3 +1,5 @@
+@import './animate.less';
+
 * {
   padding: 0;
   margin: 0;
@@ -15,22 +17,25 @@ body {
   position: fixed;
 }
 
-#logo {
-  width: 332px;
-  margin: 0 auto;
-  top: 150px;
-  position: relative;
-  z-index: 5;
-  display: none;
-}
-
-#bg {
+.scene {
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   position: absolute;
-  z-index: 10;
+  z-index: 15;
+}
+
+#logo {
+  width: 3.32rem;
+  margin: 0 auto;
+  top: 1.5rem;
+  position: relative;
+  display: none;
+}
+
+#bg {
+  z-index: 5;
 
   .layer {
     height: 100%;
@@ -38,12 +43,110 @@ body {
 
     > div {
       position: absolute;
-      height: 110%;
-      width: 110%;
-      background-image: url(/vendor/img/bg.jpg);
+      height: 130%;
+      width: 120%;
+      background-image: url(/vendor/img/bg.png);
       background-size: cover;
-      left: -5%;
-      top: -5%;
+      left: -10%;
+      top: -15%;
     }
   }
 }
+
+.chloe {
+  background-image: url(/vendor/img/chloe.png);
+  background-size: cover;
+  width: 6.83rem;
+  height: 6.7rem;
+}
+
+.quark {
+  background-image: url(/vendor/img/quark.png);
+  background-size: cover;
+  width: 5.75rem;
+  height: 7.88rem;
+}
+
+.group {
+  background-image: url(/vendor/img/group.png);
+  background-size: cover;
+  width: 100%;
+  height: 7.12rem;
+}
+
+.pop1 {
+  background-image: url(/vendor/img/pop1.png);
+  background-size: cover;
+  width: 5rem;
+  height: 3.3rem;
+}
+
+.pop2 {
+  background-image: url(/vendor/img/pop2.png);
+  background-size: cover;
+  width: 4.28rem;
+  height: 3.24rem;
+}
+
+.pop3 {
+  background-image: url(/vendor/img/pop3.png);
+  background-size: cover;
+  width: 5.37rem;
+  height: 3.96rem;
+}
+
+.pop4 {
+  background-image: url(/vendor/img/pop4.png);
+  background-size: cover;
+  width: 4.37rem;
+  height: 2.45rem;
+}
+
+#scene1 {
+  .chloe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .pop1 {
+    position: absolute;
+    top: 3.5rem;
+    right: .2rem;
+  }
+}
+
+#scene2 {
+  .quark {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .pop2 {
+    position: absolute;
+    top: 2.3rem;
+    left: 1rem;
+  }
+}
+
+#scene3 {
+  .group {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  .pop3 {
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+  }
+}
+
+#scene4 {
+  .pop4 {
+    margin: 0 auto;
+    position: relative;
+    top: 35%;
+  }
+}
+
