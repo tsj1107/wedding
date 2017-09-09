@@ -42,9 +42,27 @@
     <section class="scene" id="scene4">
       <img src="/vendor/img/pop4.png" class="pop4">
     </section>
+
+    <section class="scene" id="scene5">
+      <div id="map-container" style="height: 50%"></div>
+    </section>
   </div>
 
   <script src="/vendor/zepto.min.js"></script>
   <script src="/vendor/two.min.js"></script>
+  <script src="http://map.qq.com/api/js?v=2.exp"></script>
+  <script>
+    const center = new qq.maps.LatLng(30.24892, 120.13039);
+    const map = new qq.maps.Map(document.getElementById('map-container'),{
+        center: center,
+        zoom: 17
+    });
+    const infoWin = new qq.maps.InfoWindow({
+        map: map
+    });
+    infoWin.open();
+    infoWin.setContent('<div style="padding-top:10px;">杭州金溪山庄</div>');
+    infoWin.setPosition(center);
+  </script>
 </body>
 </html>

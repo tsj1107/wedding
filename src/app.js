@@ -71,10 +71,18 @@ const scenes = [
     hide: function() {
       $('.scene:nth-child(5) .pop4').hide()
     }
+  },
+  {
+    show: function() {
+      $('.scene:nth-child(6)').show()
+    },
+    hide: function() {
+      $('.scene:nth-child(6)').hide()
+    }
   }
 ]
 
-const max = 5
+const max = 6
 let index = 0
 $('.scenes').swipe( {
   swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
