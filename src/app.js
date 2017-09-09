@@ -2,7 +2,88 @@ import './style/index.less'
 import 'whatwg-fetch'
 import Parallax from 'parallax-js'
 
+// Switch Page
+const scenes = [
+  {
+    show: function() {
+      $('.scene:nth-child(1)').show()
+    },
+    hide: function() {
+      $('.scene:nth-child(1)').hide()
+    }
+  },
+  {
+    show: function() {
+      $('.scene:nth-child(2) .chloe').animate({
+        bottom: 0
+      }, 600, 'ease')
+      $('.scene:nth-child(2) .pop1')
+        .show()
+        .animate('flipInX', 600, 'ease')
+    },
+    hide: function() {
+      $('.scene:nth-child(2) .pop1').hide()
+      $('.scene:nth-child(2) .chloe').animate({
+        bottom: '-100%'
+      }, 600, 'ease')
+    }
+  },
+  {
+    show: function() {
+      $('.scene:nth-child(3) .quark').animate({
+        bottom: 0
+      }, 600, 'ease')
+      $('.scene:nth-child(3) .pop2')
+        .show()
+        .animate('flipInX', 600, 'ease')
+    },
+    hide: function() {
+      $('.scene:nth-child(3) .pop2').hide()
+      $('.scene:nth-child(3) .quark').animate({
+        bottom: '-100%'
+      }, 600, 'ease')
+    }
+  },
+  {
+    show: function() {
+      $('.scene:nth-child(4) .group').animate({
+        bottom: 0
+      }, 600, 'ease')
+      $('.scene:nth-child(4) .pop3')
+        .show()
+        .animate('flipInX', 600, 'ease')
+    },
+    hide: function() {
+      $('.scene:nth-child(4) .pop3').hide()
+      $('.scene:nth-child(4) .group').animate({
+        bottom: '-100%'
+      }, 600, 'ease')
+    }
+  },
+  {
+    show: function() {
+      $('.scene:nth-child(5) .pop4')
+        .show()
+        .animate('rotateIn', 600, 'ease')
+    },
+    hide: function() {
+      $('.scene:nth-child(5) .pop4').hide()
+    }
+  }
+]
 
+const max = 5
+let index = 0
+$('.scenes').on('swipeLeft', (e) => {
+  if (index === (max - 1)) return
+  scenes[index].hide()
+  scenes[++index].show()
+})
+$('.scenes').on('swipeRight', (e) => {
+  if (index === 0) return
+  scenes[index].hide()
+  scenes[--index].show()
+})
 
 // Background Animation
 const scene = document.getElementById('bg')

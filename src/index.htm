@@ -9,11 +9,7 @@
     </script>
 </head>
 <body>
-  <section class="scene">
-    <div id="logo"></div>
-  </section>
-
-  <section class="scene" id="bg"
+  <section id="bg"
       data-friction-x="0.1"
       data-friction-y="0.1"
       data-scalar-x="10"
@@ -23,24 +19,30 @@
     </div>
   </section>
 
-  <section class="scene" id="scene1">
-    <div class="pop1"></div>
-    <div class="chloe"></div>
-  </section>
+  <div class="scenes">
+    <section class="scene" id="scene0">
+      <div id="logo"></div>
+    </section>
 
-  <section class="scene" id="scene2">
-    <div class="pop2"></div>
-    <div class="quark"></div>
-  </section>
+    <section class="scene" id="scene1">
+      <img src="/vendor/img/pop1.png" class="pop1">
+      <img src="/vendor/img/chloe.png" class="chloe">
+    </section>
 
-  <section class="scene" id="scene3">
-    <div class="pop3"></div>
-    <div class="group"></div>
-  </section>
+    <section class="scene" id="scene2">
+      <img src="/vendor/img/pop2.png" class="pop2">
+      <img src="/vendor/img/quark.png" class="quark">
+    </section>
 
-  <section class="scene" id="scene4">
-    <div class="pop4"></div>
-  </section>
+    <section class="scene" id="scene3">
+      <img src="/vendor/img/pop3.png" class="pop3">
+      <img src="/vendor/img/group.png" class="group">
+    </section>
+
+    <section class="scene" id="scene4">
+      <img src="/vendor/img/pop4.png" class="pop4">
+    </section>
+  </div>
 
   <script src="/vendor/zepto.min.js"></script>
   <script src="/vendor/two.min.js"></script>
