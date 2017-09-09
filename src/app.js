@@ -6,7 +6,9 @@ import Parallax from 'parallax-js'
 const scenes = [
   {
     show: function() {
-      $('.scene:nth-child(1)').show()
+      $('.scene:nth-child(1)')
+        .show()
+        .animate('flipInY', 600, 'ease')
     },
     hide: function() {
       $('.scene:nth-child(1)').hide()
