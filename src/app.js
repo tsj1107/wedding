@@ -74,16 +74,23 @@ const scenes = [
 
 const max = 5
 let index = 0
-$('.scenes').on('swipeLeft', (e) => {
-  if (index === (max - 1)) return
-  scenes[index].hide()
-  scenes[++index].show()
-})
-$('.scenes').on('swipeRight', (e) => {
-  if (index === 0) return
-  scenes[index].hide()
-  scenes[--index].show()
-})
+$('.scenes').swipe( {
+  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+    console.log("You swiped " + direction + " with " + fingerCount + " fingers")
+    if (direction === 'left') {
+      if (index === (max - 1)) return
+      scenes[index].hide()
+      scenes[++index].show()
+    }
+    if (direction === 'right') {
+      if (index === 0) return
+      scenes[index].hide()
+      scenes[--index].show()
+    }
+  },
+  threshold:0,
+  fingers:'all'
+});
 
 // Background Animation
 const scene = document.getElementById('bg')
