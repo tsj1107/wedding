@@ -1,6 +1,7 @@
 var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var webpackConfig = {
   entry: {
     'app': './src/app.js'
@@ -19,14 +20,18 @@ var webpackConfig = {
             loader: "css-loader"
         }, {
             loader: "less-loader"
-        }]
+        }],
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
       }
     ]
   },
   plugins: [
+    new ExtractTextPlugin("[name].css"),
+
     new HtmlWebpackPlugin({
       filename: 'index.htm',
-      template: 'src/index.htm'
+      template: 'src/index.htm',
+      inject: true
     }),
 
     new CopyWebpackPlugin([
