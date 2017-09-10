@@ -29,16 +29,4 @@ Session.vim
 # IntelliJ IDEA
 .idea
 
-# Current Project
-*.iml
-*.log
-*.log.2017*
-npm-debug.log*
-.classpath
-.project
-.settings/
-bin/
-deploy/
-target/
-logs/
 
