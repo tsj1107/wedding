@@ -113,7 +113,7 @@ const two = new Two({
   height: 959
 }).appendTo(document.body)
 
-fetch('/vendor/img/logo.svg')
+fetch('./vendor/img/logo.svg')
   .then((response) => {
     return response.text()
   }).then((svg) => {
