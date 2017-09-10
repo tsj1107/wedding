@@ -14,14 +14,10 @@ var webpackConfig = {
     rules: [
       {
         test: /\.less$/,
-        use: [{
-            loader: "style-loader"
-        }, {
-            loader: "css-loader"
-        }, {
-            loader: "less-loader"
-        }],
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'less-loader']
+        })
       }
     ]
   },
