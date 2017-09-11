@@ -103,17 +103,16 @@ $('.scenes').swipe( {
 });
 
 // Background Animation
-const scene = document.getElementById('bg')
-const parallax = new Parallax(scene)
+// const scene = document.getElementById('bg')
+// const parallax = new Parallax(scene)
 
 // LOGO Animation
 const two = new Two({
   type: Two.Types.svg,
-  width: 332,
-  height: 959
+  fullscreen: true
 }).appendTo(document.body)
 
-fetch('./vendor/img/logo.svg')
+fetch('./vendor/img/welcome.svg')
   .then((response) => {
     return response.text()
   }).then((svg) => {
@@ -132,10 +131,10 @@ fetch('./vendor/img/logo.svg')
     const logo = two.interpret(div.querySelector('svg'))
     logo.subdivide()
     logo.noFill()
-    logo.center().translation.set(two.width / 2, two.height / 2)
+    logo.center().translation.set(two.width / 2, two.height / 3)
     logo.distances = calculateDistances(logo)
     logo.total = 0
-    logo.stroke = '#f42843'
+    logo.stroke = '#40351b'
     logo.linewidth = 5
     _.each(logo.distances, function(d) {
       logo.total += d
