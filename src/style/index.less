@@ -15,6 +15,7 @@ body {
   right: 0;
   bottom: 0;
   position: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 #logo {
@@ -50,14 +51,14 @@ body {
       background-image: url('/vendor/img/bg-left.png');
       background-position: center left;
       background-size: auto 50%;
-      left: -5%;
+      left: -10%;
     }
 
     &.right {
       background-image: url('/vendor/img/bg-right.png');
       background-position: center right;
       background-size: auto 50%;
-      right: -5%;
+      right: -10%;
     }
 
     &.bottom {
@@ -78,7 +79,7 @@ body {
 }
 
 .chloe {
-  width: 80vw;
+  width: 70vw;
 }
 
 .quark {
@@ -86,23 +87,37 @@ body {
 }
 
 .group {
-  width: 100vw;
+  width: 75vw;
 }
 
-.pop1 {
-  width: 65vw;
-}
+.pop {
+  text-align: center;
+  font-size: .3rem;
+  position: relative;
+  top: 75%;
+  display: none;
+  width: 70%;
+  margin: 0 auto;
 
-.pop2 {
-  width: 65vw;
-}
+  > span {
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: '“';
+      position: absolute;
+      left: -.5rem;
+      top: -.3rem;
+      font-size: .5rem;
+    }
 
-.pop3 {
-  width: 65vw;
-}
-
-.pop4 {
-  width: 70vw;
+    &::after {
+      content: '“';
+      position: absolute;
+      right: -.3rem;
+      bottom: -.4rem;
+      font-size: .5rem;
+    }
+  }
 }
 
 #scene0 {
@@ -111,6 +126,7 @@ body {
     display: block;
     margin: .5rem auto;
     position: relative;
+    animation: fadeIn 3s;
   }
   img.welcome {
     width: 50%;
@@ -129,13 +145,8 @@ body {
 #scene1 {
   .chloe {
     position: absolute;
-    bottom: -100%;
-    left: 0;
-  }
-  .pop1 {
-    position: absolute;
-    bottom: 6rem;
-    right: .3rem;
+    top: 27vh;
+    left: 15vw;
     display: none;
   }
 }
@@ -143,13 +154,8 @@ body {
 #scene2 {
   .quark {
     position: absolute;
-    bottom: -100%;
-    right: 0;
-  }
-  .pop2 {
-    position: absolute;
-    bottom: 7rem;
-    left: .8rem;
+    top: 27vh;
+    left: 15vw;
     display: none;
   }
 }
@@ -157,30 +163,44 @@ body {
 #scene3 {
   .group {
     position: absolute;
-    bottom: -100%;
-    right: 0;
-    left: 0;
-  }
-  .pop3 {
-    position: absolute;
-    bottom: 7rem;
-    left: 1rem;
+    top: 27vh;
+    left: 13vw;
     display: none;
   }
 }
 
 #scene4 {
-  .pop4 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -2rem;
-    margin-left: -35vw;
-    display: none;
+  .pop {
+    top: 40%;
+    font-size: .55rem;
   }
 }
 
 #scene5 {
-  display: none;
+  .white {
+    background-color: #ffffff;
+    padding: .4rem .3rem .3rem .3rem;
+    width: 70vw;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    position: relative;
+    top: 40vh;
+    z-index: 10;
+    text-align: center;
+    font-size: .3rem;
+    display: none;
+
+    img.arrow-down {
+      height: 45vw;
+      display: block;
+      position: absolute;
+      top: -37.3vw;
+    }
+
+    img.map,
+    img.invite {
+      width: 100%;
+    }
+  }
 }
 
