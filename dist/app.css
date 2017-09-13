@@ -1354,24 +1354,24 @@ body {
   background-repeat: no-repeat;
 }
 #bg > div.top {
-  background-image: url('/vendor/img/bg-top.png');
+  background-image: url('./vendor/img/bg-top.png');
   background-position: top center;
   background-size: 100% auto;
 }
 #bg > div.left {
-  background-image: url('/vendor/img/bg-left.png');
+  background-image: url('./vendor/img/bg-left.png');
   background-position: center left;
   background-size: auto 50%;
   left: -10%;
 }
 #bg > div.right {
-  background-image: url('/vendor/img/bg-right.png');
+  background-image: url('./vendor/img/bg-right.png');
   background-position: center right;
   background-size: auto 50%;
   right: -10%;
 }
 #bg > div.bottom {
-  background-image: url('/vendor/img/bg-bottom.png');
+  background-image: url('./vendor/img/bg-bottom.png');
   background-position: bottom center;
   background-size: 100% auto;
 }
@@ -1396,7 +1396,7 @@ body {
   text-align: center;
   font-size: .3rem;
   position: relative;
-  top: 75%;
+  top: 77vh;
   display: none;
   width: 70%;
   margin: 0 auto;
@@ -1459,7 +1459,7 @@ body {
   display: none;
 }
 #scene4 .pop {
-  top: 40%;
+  top: 43vh;
   font-size: .55rem;
 }
 #scene5 .white {
