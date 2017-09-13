@@ -1,6 +1,5 @@
 import './style/index.less'
 import 'whatwg-fetch'
-import Parallax from 'parallax-js'
 
 // Switch Page
 const scenes = [
@@ -117,10 +116,6 @@ $('.scenes').swipe( {
   threshold:0,
   fingers:'all'
 });
-
-// Background Animation
-// const scene = document.getElementById('bg')
-// const parallax = new Parallax(scene)
 
 // LOGO Animation
 const two = new Two({
