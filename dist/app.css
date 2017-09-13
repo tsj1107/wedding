@@ -1329,11 +1329,12 @@ body {
   right: 0;
   bottom: 0;
   position: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 #logo {
-  width: 3.32rem;
+  width: 3.37rem;
   margin: 0 auto;
-  top: 1.5rem;
+  top: 3rem;
   position: relative;
   display: none;
 }
@@ -1344,19 +1345,35 @@ body {
   bottom: 0;
   position: absolute;
   z-index: 5;
+  background-color: #fdfff2;
 }
-#bg .layer {
-  height: 100%;
-  width: 100%;
-}
-#bg .layer > div {
+#bg > div {
   position: absolute;
-  height: 130%;
-  width: 120%;
-  background-image: url(/vendor/img/bg.png);
-  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+#bg > div.top {
+  background-image: url('/vendor/img/bg-top.png');
+  background-position: top center;
+  background-size: 100% auto;
+}
+#bg > div.left {
+  background-image: url('/vendor/img/bg-left.png');
+  background-position: center left;
+  background-size: auto 50%;
   left: -10%;
-  top: -15%;
+}
+#bg > div.right {
+  background-image: url('/vendor/img/bg-right.png');
+  background-position: center right;
+  background-size: auto 50%;
+  right: -10%;
+}
+#bg > div.bottom {
+  background-image: url('/vendor/img/bg-bottom.png');
+  background-position: bottom center;
+  background-size: 100% auto;
 }
 .scene {
   top: 0;
@@ -1367,72 +1384,104 @@ body {
   z-index: 15;
 }
 .chloe {
-  width: 80vw;
+  width: 70vw;
 }
 .quark {
   width: 75vw;
 }
 .group {
-  width: 100vw;
+  width: 75vw;
 }
-.pop1 {
-  width: 65vw;
+.pop {
+  text-align: center;
+  font-size: .3rem;
+  position: relative;
+  top: 75%;
+  display: none;
+  width: 70%;
+  margin: 0 auto;
 }
-.pop2 {
-  width: 65vw;
+.pop > span {
+  display: inline-block;
+  position: relative;
 }
-.pop3 {
-  width: 65vw;
+.pop > span::before {
+  content: '\201C';
+  position: absolute;
+  left: -0.5rem;
+  top: -0.3rem;
+  font-size: .5rem;
 }
-.pop4 {
-  width: 70vw;
+.pop > span::after {
+  content: '\201C';
+  position: absolute;
+  right: -0.3rem;
+  bottom: -0.4rem;
+  font-size: .5rem;
 }
 #scene0 {
-  background-image: url('/vendor/img/cover.png');
-  background-size: cover;
+  padding-top: 30%;
+}
+#scene0 img {
+  display: block;
+  margin: .5rem auto;
+  position: relative;
+  animation: fadeIn 3s;
+}
+#scene0 img.welcome {
+  width: 50%;
+}
+#scene0 img.names {
+  width: 50%;
+}
+#scene0 img.time {
+  width: 35%;
+}
+#scene0 img.address {
+  width: 45%;
 }
 #scene1 .chloe {
   position: absolute;
-  bottom: -100%;
-  left: 0;
-}
-#scene1 .pop1 {
-  position: absolute;
-  bottom: 6rem;
-  right: .3rem;
+  top: 27vh;
+  left: 15vw;
   display: none;
 }
 #scene2 .quark {
   position: absolute;
-  bottom: -100%;
-  right: 0;
-}
-#scene2 .pop2 {
-  position: absolute;
-  bottom: 7rem;
-  left: .8rem;
+  top: 27vh;
+  left: 15vw;
   display: none;
 }
 #scene3 .group {
   position: absolute;
-  bottom: -100%;
-  right: 0;
-  left: 0;
+  top: 27vh;
+  left: 13vw;
+  display: none;
 }
-#scene3 .pop3 {
+#scene4 .pop {
+  top: 40%;
+  font-size: .55rem;
+}
+#scene5 .white {
+  background-color: #ffffff;
+  padding: .4rem .3rem .3rem .3rem;
+  width: 70vw;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  position: relative;
+  top: 40vh;
+  z-index: 10;
+  text-align: center;
+  font-size: .3rem;
+  display: none;
+}
+#scene5 .white img.arrow-down {
+  height: 45vw;
+  display: block;
   position: absolute;
-  bottom: 7rem;
-  left: 1rem;
-  display: none;
+  top: -37.3vw;
 }
-#scene4 .pop4 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -2rem;
-  margin-left: -35vw;
-  display: none;
-}
-#scene5 {
-  display: none;
+#scene5 .white img.map,
+#scene5 .white img.invite {
+  width: 100%;
 }
