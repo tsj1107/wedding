@@ -208,17 +208,6 @@ $signPackage = $jssdk->GetSignPackage();
   <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
   <script>
-function writeObj(obj){
- var description = "";
- for(var i in obj){
- var property=obj[i];
- description+=i+" = "+property+"\n";
- }
- alert(description);
-}
-  // 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
-  // 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
-  // 完整 JS-SDK 文档地址：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
   var unit_title='李元超&唐帅佶婚礼邀请';
   var unit_content='杭州金溪山庄湖边小草坪见';
   var unit_link='http://www.h-rock.com/marry/index.php';
@@ -229,78 +218,30 @@ function writeObj(obj){
     nonceStr: '<?php echo $signPackage["nonceStr"];?>',
     signature: '<?php echo $signPackage["signature"];?>',
     jsApiList: [
-    'onMenuShareTimeline',
-    'onMenuShareAppMessage'
-      // 所有要调用的 API 都要加到这个列表中
+      'onMenuShareTimeline',
+      'onMenuShareAppMessage'
     ]
   });
   wx.ready(function () {
     // 在这里调用 API
 
     wx.checkJsApi({
-        jsApiList: ['onMenuShareAppMessage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
-        success: function(res) {
-           // writeObj(res.checkResult);
-            // 以键值对的形式返回，可用的api值true，不可用为false
-            // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
-        }
+        jsApiList: ['onMenuShareAppMessage'],
     });
     wx.onMenuShareTimeline({
-        title: unit_title, // 分享标题
-        link: unit_link, // 分享链接
-        desc: unit_content, // 分享描述
-        imgUrl: unit_image, // 分享图标
-        success: function () {
-            // 用户确认分享后执行的回调函数
-        },
-        cancel: function () {
-            // 用户取消分享后执行的回调函数
-        }
+        title: unit_title,
+        link: unit_link,
+        desc: unit_content,
+        imgUrl: unit_image,
     });
 
     wx.onMenuShareAppMessage({
-        title: unit_title, // 分享标题
-        desc: unit_content, // 分享描述
-        link: unit_link, // 分享链接
-        imgUrl: unit_image, // 分享图标
-        type: 'link', // 分享类型,music、video或link，不填默认为link
-        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-        success: function () {
-            // 用户确认分享后执行的回调函数
-        },
-        cancel: function () {
-            // 用户取消分享后执行的回调函数
-        }
-    });
-
-    wx.onMenuShareQQ({
-        title: unit_title, // 分享标题
-        desc: unit_content, // 分享描述
-        link: unit_link, // 分享链接
-        imgUrl: unit_image, // 分享图标
-        success: function () {
-           // 用户确认分享后执行的回调函数
-        },
-        cancel: function () {
-           // 用户取消分享后执行的回调函数
-        }
-    });
-
-    wx.onMenuShareWeibo({
-        title: unit_title, // 分享标题
-        desc: unit_content, // 分享描述
-        link: unit_link, // 分享链接
-        imgUrl: unit_image, // 分享图标
-        success: function () {
-           // 用户确认分享后执行的回调函数
-        },
-        cancel: function () {
-            // 用户取消分享后执行的回调函数
-        }
-    });
-    wx.error(function(res){
-       // writeObj(res);
-    // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+        title: unit_title,
+        desc: unit_content,
+        link: unit_link,
+        imgUrl: unit_image,
+        type: 'link',
+        dataUrl: '',
     });
   });
 </script>
