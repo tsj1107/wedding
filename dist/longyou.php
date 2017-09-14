@@ -167,8 +167,8 @@ $signPackage = $jssdk->GetSignPackage();
       <div id="logo"></div>
       <img src="./vendor/img/welcome.png" class="welcome">
       <img src="./vendor/img/names.png" class="names">
-      <img src="./vendor/img/time.png" class="time">
-      <img src="./vendor/img/address.png" class="address">
+      <img src="./vendor/img/time-longyou.png" class="time">
+      <img src="./vendor/img/address-longyou.png" class="address">
       <img src="./vendor/img/slide.png" class="slide">
     </section>
 
@@ -195,10 +195,10 @@ $signPackage = $jssdk->GetSignPackage();
       <div class="white">
         <img src="./vendor/img/arrow-down.png" class="arrow-down">
         <img src="./vendor/img/invite.png" class="invite animated fadeIn">
-        <a href="https://3gimg.qq.com/lightmap/v1/marker/index.html?type=0&marker=coord:30.24892,120.13039;coordtype:5;title:%E6%9D%AD%E5%B7%9E%E9%87%91%E6%BA%AA%E5%B1%B1%E5%BA%84;addr:%E6%9D%8E%E5%85%83%E8%B6%85%20%E5%92%8C%20%E5%94%90%E5%B8%85%E4%BD%B6%20%E8%AF%9A%E6%8C%9A%E9%82%80%E8%AF%B7">
-          <img src="./vendor/img/map-hangzhou.png" class="map animated fadeIn" >
+        <a href="https://3gimg.qq.com/lightmap/v1/marker/index.html?type=0&marker=coord:29.027330,119.173580;coordtype:5;title:%E5%B9%BF%E9%93%B6%E5%A4%A7%E9%85%92%E5%BA%976F;addr:%E6%9D%8E%E5%85%83%E8%B6%85%20%E5%92%8C%20%E5%94%90%E5%B8%85%E4%BD%B6%20%E8%AF%9A%E6%8C%9A%E9%82%80%E8%AF%B7">
+          <img src="./vendor/img/map-longyou.png" class="map animated fadeIn" >
         </a>
-        <p>2017年10月14日15时18分 <br> 杭州金溪山庄湖边小草坪见</p>
+        <p>2017年10月21日17时28分 <br> 龙游县广银大酒店6楼</p>
       </div>
     </section>
     <audio id="bgMusic" loop></audio>
@@ -211,7 +211,7 @@ $signPackage = $jssdk->GetSignPackage();
 
   <script>
   var unit_title='李元超&唐帅佶婚礼邀请';
-  var unit_content='10月14日十五时十八分杭州金溪山庄湖边小草坪见';
+  var unit_content='10月21日十七时二八分杭州金溪山庄湖边小草坪见';
   var unit_link='http://www.h-rock.com/marry/index.php';
   var unit_image='http://www.h-rock.com/marry/vendor/img/group-flower.png';
   wx.config({
