@@ -1435,10 +1435,13 @@ body {
   width: 50%;
 }
 #scene0 img.time {
-  width: 35%;
+  width: 50%;
 }
 #scene0 img.address {
   width: 45%;
+}
+#scene0 img.slide {
+  width: 40%;
 }
 #scene1 .chloe {
   position: absolute;

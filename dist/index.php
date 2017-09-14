@@ -169,6 +169,7 @@ $signPackage = $jssdk->GetSignPackage();
       <img src="./vendor/img/names.png" class="names">
       <img src="./vendor/img/time.png" class="time">
       <img src="./vendor/img/address.png" class="address">
+      <img src="./vendor/img/slide.png" class="slide">
     </section>
 
     <section class="scene" id="scene1">
@@ -248,5 +249,6 @@ $signPackage = $jssdk->GetSignPackage();
     audio.play()
   });
 </script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1264421676'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1264421676' type='text/javascript'%3E%3C/script%3E"));</script>
 </body>
 </html>
