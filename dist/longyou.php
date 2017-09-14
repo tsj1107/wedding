@@ -168,7 +168,7 @@ $signPackage = $jssdk->GetSignPackage();
       <img src="./vendor/img/welcome.png" class="welcome">
       <img src="./vendor/img/names.png" class="names">
       <img src="./vendor/img/time-longyou.png" class="time">
-      <img src="./vendor/img/address-longyou.png" class="address">
+      <img src="./vendor/img/address-longyou.png" class="address-ly">
       <img src="./vendor/img/slide.png" class="slide">
     </section>
 
@@ -211,8 +211,8 @@ $signPackage = $jssdk->GetSignPackage();
 
   <script>
   var unit_title='李元超&唐帅佶婚礼邀请';
-  var unit_content='10月21日十七时二八分杭州金溪山庄湖边小草坪见';
-  var unit_link='http://www.h-rock.com/marry/index.php';
+  var unit_content='10月21日17时28分龙游县广银大酒店6F';
+  var unit_link='http://www.h-rock.com/marry/longyou.php';
   var unit_image='http://www.h-rock.com/marry/vendor/img/group-flower.png';
   wx.config({
     appId: '<?php echo $signPackage["appId"];?>',

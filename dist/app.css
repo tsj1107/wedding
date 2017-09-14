@@ -1440,6 +1440,9 @@ body {
 #scene0 img.address {
   width: 45%;
 }
+#scene0 img.address-ly {
+  width: 60%;
+}
 #scene0 img.slide {
   width: 40%;
 }

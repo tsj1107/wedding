@@ -211,7 +211,7 @@ $signPackage = $jssdk->GetSignPackage();
 
   <script>
   var unit_title='李元超&唐帅佶婚礼邀请';
-  var unit_content='10月14日十五时十八分杭州金溪山庄湖边小草坪见';
+  var unit_content='10月14日15时18分杭州金溪山庄湖边小草坪见';
   var unit_link='http://www.h-rock.com/marry/index.php';
   var unit_image='http://www.h-rock.com/marry/vendor/img/group-flower.png';
   wx.config({
