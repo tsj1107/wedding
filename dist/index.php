@@ -183,7 +183,7 @@ $signPackage = $jssdk->GetSignPackage();
 
     <section class="scene" id="scene3">
       <img src="./vendor/img/group-flower.png" class="group">
-      <div class="pop"><span>听说跨克和小帅 <br> 都要结婚啦？！</span></div>
+      <div class="pop"><span>听说夸克和小帅 <br> 都要结婚啦？！</span></div>
     </section>
 
     <section class="scene" id="scene4">
@@ -200,6 +200,7 @@ $signPackage = $jssdk->GetSignPackage();
         <p>2017年10月14日15时38分 <br> 杭州金溪山庄湖边小草坪见</p>
       </div>
     </section>
+    <audio id="bgMusic" loop></audio>
   </div>
 
   <script src="./vendor/zepto.min.js"></script>
@@ -209,7 +210,7 @@ $signPackage = $jssdk->GetSignPackage();
 
   <script>
   var unit_title='李元超&唐帅佶婚礼邀请';
-  var unit_content='杭州金溪山庄湖边小草坪见';
+  var unit_content='10月14日十五时十八分杭州金溪山庄湖边小草坪见';
   var unit_link='http://www.h-rock.com/marry/index.php';
   var unit_image='http://www.h-rock.com/marry/vendor/img/group-flower.png';
   wx.config({
@@ -223,8 +224,6 @@ $signPackage = $jssdk->GetSignPackage();
     ]
   });
   wx.ready(function () {
-    // 在这里调用 API
-
     wx.checkJsApi({
         jsApiList: ['onMenuShareAppMessage'],
     });
@@ -243,6 +242,10 @@ $signPackage = $jssdk->GetSignPackage();
         type: 'link',
         dataUrl: '',
     });
+
+    var audio = document.getElementById("bgMusic")
+    audio.setAttribute('src', 'JimiAndLucy.mp3')
+    audio.play()
   });
 </script>
 </body>
