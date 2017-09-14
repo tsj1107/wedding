@@ -148,12 +148,11 @@ $signPackage = $jssdk->GetSignPackage();
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>T & L Wedding</title>
   <script>
       !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);
       flex(100, 1);
     </script>
-    <link href="app.css" rel="stylesheet"></head>
+    <link href="app.css" rel="stylesheet">
 </head>
 <body>
   <section id="bg">
@@ -220,10 +219,10 @@ function writeObj(obj){
   // 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
   // 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
   // 完整 JS-SDK 文档地址：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
-  var unit_title='李元超&唐帅佶的婚礼邀请';
+  var unit_title='李元超&唐帅佶婚礼邀请';
   var unit_content='杭州金溪山庄湖边小草坪见';
   var unit_link='http://www.h-rock.com/marry/index.php';
-  var unit_image='http://www.h-rock.com/marry/vendor/img/chloe.png';
+  var unit_image='http://www.h-rock.com/marry/vendor/img/group-flower.png';
   wx.config({
     appId: '<?php echo $signPackage["appId"];?>',
     timestamp: <?php echo $signPackage["timestamp"];?>,
@@ -274,6 +273,31 @@ function writeObj(obj){
         }
     });
 
+    wx.onMenuShareQQ({
+        title: unit_title, // 分享标题
+        desc: unit_content, // 分享描述
+        link: unit_link, // 分享链接
+        imgUrl: unit_image, // 分享图标
+        success: function () {
+           // 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+           // 用户取消分享后执行的回调函数
+        }
+    });
+
+    wx.onMenuShareWeibo({
+        title: unit_title, // 分享标题
+        desc: unit_content, // 分享描述
+        link: unit_link, // 分享链接
+        imgUrl: unit_image, // 分享图标
+        success: function () {
+           // 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
     wx.error(function(res){
        // writeObj(res);
     // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
