@@ -190,98 +190,60 @@ $('.scenes').swipe( {
   },
   threshold:0,
   fingers:'all'
-});
+})
 
-// LOGO Animation
-const two = new Two({
-  type: Two.Types.svg,
-  fullscreen: true
-}).appendTo(document.body)
-
-fetch('./vendor/img/welcome.svg')
-  .then((response) => {
-    return response.text()
-  }).then((svg) => {
-    let doc = document.implementation.createDocument('', '', null)
-    let div = doc.createElement('div')
-    div.innerHTML = svg
-
-    let t = 0
-    let startOver
-    let clearT = function() {
-      t = 0
-      setEnding(logo, 0)
-      startOver = _.after(60, clearT)
-    }
-
-    const logo = two.interpret(div.querySelector('svg'))
-    logo.subdivide()
-    logo.noFill()
-    logo.center().translation.set(two.width / 2, two.height / 3)
-    logo.distances = calculateDistances(logo)
-    logo.total = 0
-    logo.stroke = '#40351b'
-    logo.linewidth = 5
-    _.each(logo.distances, function(d) {
-      logo.total += d
-    })
-
-    clearT()
-
-    two
-      .appendTo(document.getElementById('logo'))
-      .bind('update', function() {
-        if (t < 0.9999) {
-          t += 0.00625
-        } else {
-          // startOver()
+function preloadImg(list,imgs) {
+    var len = list.length
+    return new Promise(function(resolve, reject) {
+      $(list).each(function(i,e) {
+        var img = new Image()
+        img.src = e
+        if(img.complete) {
+          imgs[i] = img
+          len--
+          if(len == 0) {
+            resolve()
+          }
         }
-
-        setEnding(logo, t)
-
-      }).play()
-  })
-
-function calculateDistances(group) {
-  return _.map(group.children, function(child) {
-    var d = 0, a;
-    _.each(child.vertices, function(b, i) {
-      if (i > 0) {
-        d += a.distanceTo(b)
-      }
-      a = b
+        else {
+          img.onload = (function(j) {
+            return function() {
+              imgs[j] = img
+              len--
+              if(len == 0) {
+                resolve()
+              }
+            }
+          })(i)
+          img.onerror = function() {
+            len--
+            console.log('fail to load image' + e)
+          }
+        }
+      })
     })
-    return d
-  })
 }
-
-function setEnding(group, t) {
-  var i = 0
-  var traversed = t * group.total
-  var current = 0
-
-  _.each(group.children, function(child) {
-    var distance = group.distances[i]
-    var min = current
-    var max = current + distance
-    var pct = cmap(traversed, min, max, 0, 1)
-    child.ending = pct
-    current = max
-    i++
-  })
-}
-
-function clamp(v, min, max) {
-  return Math.max(Math.min(v, max), min);
-}
-
-function map(v, i1, i2, o1, o2) {
-  return o1 + (o2 - o1) * ((v - i1) / (i2 - i1));
-}
-
-function cmap(v, i1, i2, o1, o2) {
-  return clamp(map(v, i1, i2, o1, o2), o1, o2);
-}
+var list = [
+  './vendor/img/welcome.png',
+  './vendor/img/names.png',
+  './vendor/img/time.png',
+  './vendor/img/address.png',
+  './vendor/img/chloe-flower.png',
+  './vendor/img/quark-flower.png',
+  './vendor/img/group-flower.png',
+  './vendor/img/arrow-down.png',
+  './vendor/img/invite.png',
+  './vendor/img/bg-top.png',
+  './vendor/img/bg-left.png',
+  './vendor/img/bg-right.png',
+  './vendor/img/bg-bottom.png',
+]
+var imgs = []
+preloadImg(list, imgs).then(function() {
+  $('#bg').show()
+  $('.scenes').show()
+  $('#loading').hide()
+})
 
 
 /***/ }),
