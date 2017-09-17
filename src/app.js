@@ -116,3 +116,56 @@ $('.scenes').swipe( {
   threshold:0,
   fingers:'all'
 })
+
+function preloadImg(list,imgs) {
+    var len = list.length
+    return new Promise(function(resolve, reject) {
+      $(list).each(function(i,e) {
+        var img = new Image()
+        img.src = e
+        if(img.complete) {
+          imgs[i] = img
+          len--
+          if(len == 0) {
+            resolve()
+          }
+        }
+        else {
+          img.onload = (function(j) {
+            return function() {
+              imgs[j] = img
+              len--
+              if(len == 0) {
+                resolve()
+              }
+            }
+          })(i)
+          img.onerror = function() {
+            len--
+            console.log('fail to load image' + e)
+          }
+        }
+      })
+    })
+}
+var list = [
+  './vendor/img/welcome.png',
+  './vendor/img/names.png',
+  './vendor/img/time.png',
+  './vendor/img/address.png',
+  './vendor/img/chloe-flower.png',
+  './vendor/img/quark-flower.png',
+  './vendor/img/group-flower.png',
+  './vendor/img/arrow-down.png',
+  './vendor/img/invite.png',
+  './vendor/img/bg-top.png',
+  './vendor/img/bg-left.png',
+  './vendor/img/bg-right.png',
+  './vendor/img/bg-bottom.png',
+]
+var imgs = []
+preloadImg(list, imgs).then(function() {
+  $('#bg').show()
+  $('.scenes').show()
+  $('#loading').hide()
+})
