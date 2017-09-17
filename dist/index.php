@@ -155,6 +155,11 @@ $signPackage = $jssdk->GetSignPackage();
     <link href="app.css" rel="stylesheet">
 </head>
 <body>
+  <div id="loading">
+    <div class="lds-heart">
+      <div></div>
+    </div>
+  </div>
   <section id="bg">
     <div class="top animated slideInDown"></div>
     <div class="left animated slideInLeft"></div>
@@ -249,6 +254,8 @@ $signPackage = $jssdk->GetSignPackage();
     audio.play()
   });
 </script>
+<div style="display:none">
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1264421676'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1264421676' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
 </body>
 </html>
