@@ -1338,6 +1338,10 @@ body {
   position: relative;
   display: none;
 }
+#yes {
+  color: #917097;
+  text-decoration: underline;
+}
 #bg {
   top: 0;
   left: 0;

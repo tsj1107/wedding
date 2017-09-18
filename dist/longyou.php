@@ -204,6 +204,7 @@ $signPackage = $jssdk->GetSignPackage();
           <img src="./vendor/img/map-longyou.png" class="map animated fadeIn" >
         </a>
         <p>2017年10月21日17时28分 <br> 龙游县广银大酒店6楼</p>
+        <p><a href="http://cn.mikecrm.com/2W9QMAg" id="yes">是否参加？</a></p>
       </div>
     </section>
     <audio id="bgMusic" loop></audio>

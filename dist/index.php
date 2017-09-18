@@ -204,6 +204,7 @@ $signPackage = $jssdk->GetSignPackage();
           <img src="./vendor/img/map-hangzhou.png" class="map animated fadeIn" >
         </a>
         <p>2017年10月14日15时18分 <br> 杭州金溪山庄湖边小草坪见</p>
+        <p><a href="http://cn.mikecrm.com/2W9QMAg" id="yes">是否参加？</a></p>
       </div>
     </section>
     <audio id="bgMusic" loop></audio>
